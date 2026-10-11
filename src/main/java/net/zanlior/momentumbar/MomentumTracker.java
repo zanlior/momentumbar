@@ -9,10 +9,10 @@ public final class MomentumTracker {
     public enum State { FORWARD, FORWARD_BOOST, BACKWARD, BACKWARD_BOOST }
 
     // ---- tune these to taste, in blocks/tick (multiply by 20 for blocks/sec) ----
-    private static final float SPRINT_CAP = 0.29f;
-    private static final float FORWARD_BOOST_HEADROOM = 0.34f;   // extra speed above SPRINT_CAP for a full (100%) BOOST reveal
-    private static final float BACKWARD_CAP = 0.5f;
-    private static final float BACKWARD_BOOST_HEADROOM = 0.5f;   // extra speed above BACKWARD_CAP for a full (100%) BOOST reveal
+    private static final float SPRINT_CAP = 0.15f;
+    private static final float FORWARD_BOOST_HEADROOM = 0.17f;   // extra speed above SPRINT_CAP for a full (100%) BOOST reveal
+    private static final float BACKWARD_CAP = 0.25f;
+    private static final float BACKWARD_BOOST_HEADROOM = 0.25f;   // extra speed above BACKWARD_CAP for a full (100%) BOOST reveal
 
     private static final float DEADZONE = 0.01f;
     private static final float HYSTERESIS = 0.03f; // 3% buffer around each cap to stop flicker

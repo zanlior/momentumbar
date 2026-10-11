@@ -18,6 +18,9 @@
 		"main": [
 			"net.zanlior.momentumbar.MomentumBar"
 		],
+		"client": [
+			"net.zanlior.momentumbar.MomentumBarClient"
+		],
 		"fabric-datagen": [
 			"net.zanlior.momentumbar.MomentumBarDataGenerator"
 		]

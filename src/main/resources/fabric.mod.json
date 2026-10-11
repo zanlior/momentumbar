@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "momentumbar",
+	"version": "${version}",
+	"name": "Momentum Bar",
+	"description": "This is a momentum bar!",
+	"authors": [
+		"zanlior"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": ""
+	},
+	"license": "MIT-License",
+	"icon": "assets/momentumbar/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.zanlior.momentumbar.MomentumBar"
+		],
+		"fabric-datagen": [
+			"net.zanlior.momentumbar.MomentumBarDataGenerator"
+		]
+	},
+	"mixins": [
+		"momentumbar.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

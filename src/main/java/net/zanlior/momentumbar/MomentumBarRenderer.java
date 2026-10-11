@@ -29,7 +29,7 @@ public class MomentumBarRenderer {
         if (mc.player == null || mc.options.hideGui) return;
 
         int x = mc.getWindow().getGuiScaledWidth() / 2 - W / 2;
-        int y = mc.getWindow().getGuiScaledHeight() - 32;
+        int y = mc.getWindow().getGuiScaledHeight() - 29;
 
         // Background track, always full width.
         graphics.blit(RenderPipelines.GUI_TEXTURED, BACKGROUND, x, y, 0, 0, W, H, W, H);

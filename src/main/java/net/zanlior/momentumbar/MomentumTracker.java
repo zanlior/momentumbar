@@ -87,7 +87,7 @@ public final class MomentumTracker {
         backwardBoosted = false;
 
         float onThreshold = SPRINT_CAP * (1f + HYSTERESIS);
-        float offThreshold = SPRINT_CAP * (1f - HYSTERESIS);
+        float offThreshold = SPRINT_CAP * (1f + HYSTERESIS);
         if (!forwardBoosted && smoothedSpeed > onThreshold) {
             forwardBoosted = true;
         } else if (forwardBoosted && smoothedSpeed < offThreshold) {

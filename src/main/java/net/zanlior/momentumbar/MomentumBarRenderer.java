@@ -43,11 +43,11 @@ public class MomentumBarRenderer {
             case FORWARD_BOOST -> {
                 // Base bar is maxed out (you're already past sprint cap to be here).
                 drawLeftAnchored(graphics, FORWARD, x, y, 1f);
-                drawRightAnchoredBoost(graphics, FORWARD_BOOST, x, y, fraction);
+                drawRightAnchoredBoost(graphics, FORWARD_BOOST, x, y, fraction, state);
             }
             case BACKWARD_BOOST -> {
                 drawLeftAnchored(graphics, BACKWARD, x, y, 1f);
-                drawRightAnchoredBoost(graphics, BACKWARD_BOOST, x, y, fraction);
+                drawRightAnchoredBoost(graphics, BACKWARD_BOOST, x, y, fraction, state);
             }
         }
     }
@@ -62,13 +62,13 @@ public class MomentumBarRenderer {
     }
 
     /**
-     * Boost overlay: grows from the RIGHT edge inward, capped at half the bar's
-     * width. Both the screen position and the texture sample (u) are anchored
+     * Boost overlay: grows from the RIGHT edge inward. Forward can span the
+     * full bar; backward is capped at half. Screen position and sample (u) are anchored
      * to the right, so a small boost shows a thin strip of the texture's own
      * rightmost (hottest) color, growing left as the fraction increases.
      */
-    private static void drawRightAnchoredBoost(GuiGraphicsExtractor graphics, Identifier texture, int x, int y, float fraction) {
-        float cappedFraction = clamp01(fraction) * MomentumTracker.boostMaxFraction();
+    private static void drawRightAnchoredBoost(GuiGraphicsExtractor graphics, Identifier texture, int x, int y, float fraction, MomentumTracker.State state) {
+        float cappedFraction = clamp01(fraction) * MomentumTracker.boostMaxFraction(state);
         int fillW = Math.round(W * cappedFraction);
         if (fillW <= 0) return;
 
